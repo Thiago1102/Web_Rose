@@ -1,141 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rose Estetica - Servicios de estética y bienestar." />
-  <title>Rose Estetica</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rose Estetica - Servicios de estética y bienestar." />
+    <title>Rose Estetica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600;700&family=Poppins:wght@500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-  <header class="header" id="top">
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio de Rose Estetica">
-        <img src="img/logo.png" alt="Logo Rose Estetica" />
-        <span>Rose Estetica</span>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">Menu</button>
-      <nav class="nav" id="mainNav" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#opiniones">Opiniones</a>
-        <a href="#reserva">Reserva Cita</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- Sección Inicio: presentación principal y llamada a la acción -->
-    <section id="inicio" class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Belleza y bienestar</p>
-          <h1>Cuidamos tu piel, resaltamos tu esencia.</h1>
-          <p class="lead">Bienvenida a Rose Estetica, un espacio pensado para que te sientas bien por dentro y por fuera.</p>
-          <a class="btn" href="#reserva">Reservar ahora</a>
+    <header class="header" id="top">
+        <div class="container nav-wrap">
+            <a class="brand" href="#inicio" aria-label="inicio de Rose Estetica">
+                <picture>
+                    <source media="(max-width: 900px)" srcset="img/LOGO_MOVIL.png" />
+                    <img src="img/LOGO.PNG" alt="Logo Rose Estetica" />
+                </picture>
+                <span class="brand-name">Rose Estetica</span>
+            </a>
+            <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">Menu</button>
+            <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                <a class="active" href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#ubicacion">Ubicación</a>
+                <a href="#reserva">Reserva Cita</a>
+            </nav>
         </div>
-        <div class="hero-media">
-          <img src="img/hero.jpg" alt="Tratamiento de estética facial" />
+    </header>
+
+    <main>
+        <!-- Sección Inicio: presentación principal y llamada a la acción -->
+        <section id="inicio" class="hero">
+            <div class="hero-grid">
+                <div>
+                    <h4>Belleza y bienestar</h4>
+                    <h1>Transforma tu Cuerpo y Realza tu Esencia.</h1>
+                    <p class="lead">Bienvenida a Rose Estetica, un espacio pensado para que te sientas bien por dentro y
+                        por fuera.</p>
+                    <a class="btn" href="#reserva">Reservar ahora</a>
+                </div>
+                <div class="hero-media">
+                    <img src="img/hero.jpg" alt="Tratamiento de estética facial" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios: lista de tratamientos o servicios ofrecidos -->
+        <section id="servicios" class="section services">
+            <div class="container-product">
+                <h2>El detalle perfecto para tus manos</h2>
+                <div class="products-cards">
+                    <article class="card-product">
+                        <img src="img/Mano (1).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (2).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (3).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (4).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (5).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (6).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (7).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (7).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (8).png" alt="Diseño de cejas" />
+                    </article>
+                </div>
+            </div>
+            <div class="container-product">
+                <h2>El detalle perfecto para tus pies</h2>
+                <div class="products-cards">
+                    <article class="card-product">
+                        <img src="img/Mano (1).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (2).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (3).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (4).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (5).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (6).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (7).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (7).png" alt="Limpieza facial" />
+                    </article>
+                    <article class="card-product">
+                        <img src="img/Mano (8).png" alt="Diseño de cejas" />
+                    </article>
+                </div>
+            </div>
+            <div class="container-product">
+                <h2>Otros servicios</h2>
+                <div class="container-otrosServicios">
+                    <article class="otros-servicio-card">
+                        <img src="img/Maderoterapia0.jpg" alt="Maderoterapia" />
+                        <div class="otros-servicio-info">
+                            <h3>Maderoterapia</h3>
+                            <p>Masaje corporal con elementos de madera para modelar, drenar y relajar.</p>
+                        </div>
+                    </article>
+                    <article class="otros-servicio-card">
+                        <img src="img/lifting.png" alt="Lifting de pestañas" />
+                        <div class="otros-servicio-info">
+                            <h3>Lifting de pestañas</h3>
+                            <p>Tratamiento especializado para realzar y curvar tus pestañas de manera natural.</p>
+                        </div>
+                    </article>
+                    <article class="otros-servicio-card">
+                        <img src="img/facial_care.png" alt="Cuidado facial" />
+                        <div class="otros-servicio-info">
+                            <h3>Cuidado facial</h3>
+                            <p>Tratamientos faciales personalizados para mantener tu piel saludable y radiante.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre mí: historia, experiencia y propuesta de valor personal -->
+        <section id="sobre-mi" class="section about">
+            <div class="container about-grid">
+                <div class="about-media">
+                    <img src="img/Maderoterapia2.jpg" alt="Rose, especialista en estética" />
+                </div>
+                <div class="sobre-mi">
+                    <h2>La maestría detrás de cada tratamiento</h2>
+                    <p>Soy Rose, especialista en estética con enfoque personalizado. Mi objetivo es ofrecerte una
+                        experiencia cercana y profesional para que te sientas cómoda en cada visita.<br>
+                    <br>Trabajo con técnicas actualizadas y productos seleccionados para cuidar tu piel y potenciar tu
+                        confianza.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Ubicación: dirección, horarios y referencia de acceso -->
+        <section id="ubicacion" class="section location-section">
+            <div class="container">
+                <h2>Dónde estamos</h2>
+                <p class="location-intro">Atendemos en Azuqueca de Henares (Guadalajara), en una zona bien conectada para que llegar sea cómodo tanto en coche como en transporte público.</p>
+                <div class="location-grid">
+                    <article class="location-card">
+                        <h3>Rose Estetica</h3>
+                        <p><strong>Zona:</strong> Azuqueca de Henares, Guadalajara</p>
+                        <p><strong>Horario:</strong><br>Lunes a Viernes: 10:00 - 20:00<br>Sábados: 10:00 - 14:00</p>
+                        <p><strong>Referencia:</strong> a pocos minutos del centro urbano de Azuqueca de Henares.</p>
+                    </article>
+                    <article class="location-card">
+                        <h3>Cómo llegar</h3>
+                        <ul class="location-list">
+                            <li>En Cercanías: estación de Azuqueca de Henares (línea C-2).</li>
+                            <li>En coche: acceso rápido desde la A-2 (salidas hacia Azuqueca de Henares).</li>
+                            <li>En bus interurbano: líneas con conexión desde Guadalajara y corredor del Henares.</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="map-wrap" aria-label="Mapa de Azuqueca de Henares">
+                    <iframe
+                        title="Mapa de ubicación en Azuqueca de Henares"
+                        src="https://www.google.com/maps?q=Azuqueca%20de%20Henares&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Reserva Cita: formulario de contacto para agendar una cita -->
+        <section id="reserva" class="section booking">
+            <div class="container booking-wrap">
+                <h2>Reserva Cita</h2>
+                <p>Completa el formulario y te contactaremos para confirmar disponibilidad.</p>
+                <form class="form" id="bookingForm" action="#" method="post" novalidate>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" minlength="2" autocomplete="name" required />
+
+                    <label for="telefono">Teléfono</label>
+                    <input id="telefono" name="telefono" type="tel" inputmode="tel" pattern="[0-9+\-\s]{7,20}" autocomplete="tel" required />
+
+                    <label for="servicio">Servicio de interés</label>
+                    <input id="servicio" name="servicio" type="text" minlength="3" required />
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" minlength="10" placeholder="Cuéntanos qué necesitas"></textarea>
+
+                    <button class="btn" type="submit">Enviar solicitud</button>
+                    <p class="form-note" id="formNote" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-wrap">
+            <p>Rose Estetica - <span id="year"></span></p>
+            <a href="#inicio">Volver arriba</a>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- Sección Servicios: lista de tratamientos o servicios ofrecidos -->
-    <section id="servicios" class="section services">
-      <div class="container">
-        <h2>Servicios</h2>
-        <p class="section-intro">Personaliza esta lista con tus tratamientos principales.</p>
-        <div class="cards">
-          <article class="card">
-            <img src="img/servicio-1.jpg" alt="Limpieza facial" />
-            <h3>Limpieza facial</h3>
-            <p>Renueva tu piel con una limpieza profunda y productos de calidad.</p>
-          </article>
-          <article class="card">
-            <img src="img/servicio-2.jpg" alt="Diseño de cejas" />
-            <h3>Diseño de cejas</h3>
-            <p>Definimos la forma ideal para realzar la armonía de tu rostro.</p>
-          </article>
-          <article class="card">
-            <img src="img/servicio-3.jpg" alt="Tratamientos corporales" />
-            <h3>Tratamientos corporales</h3>
-            <p>Protocolos enfocados en bienestar, relajación y cuidado integral.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección Sobre mí: historia, experiencia y propuesta de valor personal -->
-    <section id="sobre-mi" class="section about">
-      <div class="container about-grid">
-        <div class="about-media">
-          <img src="img/sobre-mi.jpg" alt="Rose, especialista en estética" />
-        </div>
-        <div>
-          <h2>Sobre mí</h2>
-          <p>Soy Rose, especialista en estética con enfoque personalizado. Mi objetivo es ofrecerte una experiencia cercana y profesional para que te sientas cómoda en cada visita.</p>
-          <p>Trabajo con técnicas actualizadas y productos seleccionados para cuidar tu piel y potenciar tu confianza.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección Opiniones: testimonios o reseñas de clientes -->
-    <section id="opiniones" class="section testimonials">
-      <div class="container">
-        <h2>Opiniones</h2>
-        <div class="cards testimonials-grid">
-          <blockquote class="card quote">
-            <p>Excelente atención, muy profesional y resultados visibles desde la primera sesión.</p>
-            <cite>- Cliente 1</cite>
-          </blockquote>
-          <blockquote class="card quote">
-            <p>Un ambiente súper agradable. Me sentí acompañada en todo el proceso.</p>
-            <cite>- Cliente 2</cite>
-          </blockquote>
-          <blockquote class="card quote">
-            <p>Recomiendo Rose Estetica al 100%. Calidad, cercanía y confianza.</p>
-            <cite>- Cliente 3</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección Reserva Cita: formulario de contacto para agendar una cita -->
-    <section id="reserva" class="section booking">
-      <div class="container booking-wrap">
-        <h2>Reserva Cita</h2>
-        <p>Completa el formulario y te contactaremos para confirmar disponibilidad.</p>
-        <form class="form" id="bookingForm" action="#" method="post">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" required />
-
-          <label for="telefono">Teléfono</label>
-          <input id="telefono" name="telefono" type="tel" required />
-
-          <label for="servicio">Servicio de interés</label>
-          <input id="servicio" name="servicio" type="text" required />
-
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas"></textarea>
-
-          <button class="btn" type="submit">Enviar solicitud</button>
-          <p class="form-note" id="formNote" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-wrap">
-      <p>Rose Estetica - <span id="year"></span></p>
-      <a href="#top">Volver arriba</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
