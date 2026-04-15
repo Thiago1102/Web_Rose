@@ -98,57 +98,98 @@ if (sections.length > 0) {
   sections.forEach((section) => observer.observe(section));
 }
 
-bookingForm?.addEventListener("submit", async (event) => {
+bookingForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (!formNote) {
+  if (!formNote || !bookingForm) {
+    return;
+  }
+
+  const nombreInput = bookingForm.elements.namedItem("nombre");
+  const telefonoInput = bookingForm.elements.namedItem("telefono");
+  const servicioInput = bookingForm.elements.namedItem("servicio");
+  const mensajeInput = bookingForm.elements.namedItem("mensaje");
+
+  const missingFields = [];
+
+  if (nombreInput instanceof HTMLInputElement && !nombreInput.value.trim()) {
+    missingFields.push("nombre");
+  }
+
+  if (telefonoInput instanceof HTMLInputElement && !telefonoInput.value.trim()) {
+    missingFields.push("telefono");
+  }
+
+  if (servicioInput instanceof HTMLSelectElement && !servicioInput.value) {
+    missingFields.push("servicio");
+  }
+
+  if (missingFields.length > 0) {
+    formNote.textContent = `Completa los campos obligatorios: ${missingFields.join(", ")}.`;
+    return;
+  }
+
+  const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{2,60}$/;
+  if (
+    nombreInput instanceof HTMLInputElement &&
+    (typeof nombreInput.value !== "string" || !namePattern.test(nombreInput.value.trim()))
+  ) {
+    formNote.textContent = "El nombre debe contener solo letras y espacios (2 a 60 caracteres).";
+    nombreInput.focus();
     return;
   }
 
   if (!bookingForm.checkValidity()) {
     bookingForm.reportValidity();
-    formNote.textContent = "Revisa los campos obligatorios antes de enviar.";
+    formNote.textContent = "Revisa el formulario. Verifica especialmente el teléfono.";
     return;
   }
 
-  const endpoint = bookingForm.dataset.endpoint?.trim();
+  const whatsappNumber = (bookingForm.dataset.whatsapp || "").replace(/\D/g, "");
 
-  if (!endpoint) {
-    formNote.textContent =
-      "Solicitud validada. Configura data-endpoint en el formulario para enviarla a un backend real.";
+  if (!whatsappNumber) {
+    formNote.textContent = "Falta configurar tu número de WhatsApp en el formulario.";
     return;
   }
 
   const submitButton = bookingForm.querySelector('button[type="submit"]');
+  const servicioTexto =
+    servicioInput instanceof HTMLSelectElement
+      ? servicioInput.options[servicioInput.selectedIndex]?.text || servicioInput.value
+      : "No indicado";
+  const mensajeTexto =
+    mensajeInput instanceof HTMLTextAreaElement && mensajeInput.value.trim()
+      ? mensajeInput.value.trim()
+      : "Sin mensaje adicional.";
 
-  try {
-    if (submitButton) {
-      submitButton.disabled = true;
-    }
+  const whatsappMessage = [
+    "Hola, quiero reservar una cita.",
+    "",
+    `Nombre: ${nombreInput instanceof HTMLInputElement ? nombreInput.value.trim() : ""}`,
+    `Teléfono: ${telefonoInput instanceof HTMLInputElement ? telefonoInput.value.trim() : ""}`,
+    `Servicio: ${servicioTexto}`,
+    `Mensaje: ${mensajeTexto}`,
+  ].join("\n");
 
-    formNote.textContent = "Enviando solicitud...";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    const response = await fetch(endpoint, {
-      method: "POST",
-      body: new FormData(bookingForm),
-      headers: {
-        Accept: "application/json",
-      },
-    });
+  if (submitButton instanceof HTMLButtonElement) {
+    submitButton.disabled = true;
+  }
 
-    if (!response.ok) {
-      throw new Error("Request failed");
-    }
+  formNote.textContent = "Abriendo WhatsApp..."; 
 
-    formNote.textContent = "Gracias. Tu solicitud fue enviada correctamente.";
-    bookingForm.reset();
-  } catch {
-    formNote.textContent =
-      "No se pudo enviar la solicitud. Intenta de nuevo en unos minutos.";
-  } finally {
-    if (submitButton) {
-      submitButton.disabled = false;
-    }
+  const newWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+  if (!newWindow) {
+    window.location.href = whatsappUrl;
+  }
+
+  formNote.textContent = "WhatsApp abierto. Revisa el mensaje y pulsa enviar.";
+  bookingForm.reset();
+
+  if (submitButton instanceof HTMLButtonElement) {
+    submitButton.disabled = false;
   }
 });
 
